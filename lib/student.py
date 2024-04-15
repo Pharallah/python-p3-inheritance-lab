@@ -4,5 +4,13 @@ from user import User
 
 class Student(User):
     
-    def learn(self):
-        pass
+    def __init__(self, first_name, last_name, knowledge=None):
+        super().__init__(first_name, last_name)
+        if knowledge is None:
+            self.knowledge = []
+        else:
+            self.knowledge = knowledge
+
+    def learn(self, information):
+        self.knowledge.append(information)
+        
